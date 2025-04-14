@@ -2,6 +2,7 @@ import sys
 from cli import main as cli_main
 from gui import ObfushellGUI
 from PyQt5.QtWidgets import QApplication
+from banner import display_banner
 
 def start_cli():
     cli_main()
@@ -15,7 +16,7 @@ def start_gui():
 def main():
     display_banner()
     print("[Obfushell] Payload Crafter - Select Mode\n")
-    mode = input("Pilih mode: (1) CLI (2) GUI: ")
+    mode = input("Pilih mode: (1) CLI (2) GUI: ").strip()
 
     if mode == "1":
         start_cli()
