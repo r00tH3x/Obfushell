@@ -1,72 +1,109 @@
-Obfushell
+Obfushell - Linux Payload Crafter
 
-Obfushell adalah tool powerful untuk membuat dan mengobfuscate payload Linux secara interaktif, baik melalui CLI maupun GUI. Dirancang untuk penetration tester, red teamer, dan enthusiast di dunia ethical hacking yang ingin payload-nya tidak mudah terdeteksi dan tetap efektif.
+<p align="center">
+   <img src="https://img.shields.io/badge/Python-3.8%2B-blue" />
+   <img src="https://img.shields.io/badge/License-MIT-green" />
+</p>Overview
 
-Fitur Utama
+Obfushell adalah alat untuk membuat dan mengobfuscate payload Linux secara interaktif. Alat ini memungkinkan pengguna untuk membuat payload yang lebih tersembunyi menggunakan metode obfuscation seperti base64, XOR, dan reverse string. Tool ini dapat dijalankan dalam mode CLI atau GUI untuk memudahkan penggunaan, baik oleh pemula atau profesional di dunia ethical hacking.
 
-Payload Generator (Reverse & Bind Shell)
 
-Obfuscation (base64, XOR, reverse string, chaining)
+---
 
-Interactive CLI Mode
+Fitur
 
-User-Friendly GUI Mode (PyQt5)
+💻 Payload Generator: Membuat reverse shell dan bind shell dalam berbagai format (bash, python, perl, socat, ncat).
 
-Listener otomatis (menggunakan nc)
+🔒 Obfuscation: Menyembunyikan payload dengan teknik obfuscation seperti base64, XOR, dan reverse string.
 
-Modular, clean code, dan mudah dikembangkan
+🎮 Mode Interaktif: Bisa memilih antara mode CLI (Command Line Interface) atau GUI (Graphical User Interface) dengan PyQt5.
+
+🖥️ Listener: Mengaktifkan listener otomatis menggunakan nc untuk menangkap koneksi dari payload.
+
+🧑‍💻 Modular: Kode yang bersih, mudah dikembangkan, dan dapat disesuaikan dengan kebutuhan Anda.
+
+
+
+---
+
+Prasyarat
+
+Sebelum memulai, pastikan Anda telah menginstal hal-hal berikut di sistem Anda:
+
+Python 3.8+ — Download
+
+PyQt5 — Library untuk membuat GUI berbasis Qt.
+
+nc (Netcat) — Untuk menjalankan listener (biasa sudah terpasang di sebagian besar distribusi Linux).
+
 
 
 ---
 
 Instalasi
 
-1. Clone Repository
+1. Kloning Repositori
 
 git clone https://github.com/username/obfushell.git
 cd obfushell
 
-2. Install Dependencies
+2. Buat Virtual Environment (Opsional, tapi Disarankan)
+
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+
+3. Install Dependensi Python
 
 pip install -r requirements.txt
 
-Jika belum punya PyQt5:
+4. Pastikan nc Terpasang
 
-pip install pyqt5
+Jika nc (Netcat) belum terpasang, Anda bisa menginstalnya melalui paket manager:
+
+Debian/Ubuntu:
+
+sudo apt install netcat
+
+RedHat/CentOS:
+
+sudo yum install nmap-ncat
 
 
 ---
 
-Cara Menjalankan
+Cara Penggunaan
 
 Mode CLI
 
 python main.py
 # Pilih: 1 (CLI)
 
-Ikuti petunjuk untuk memilih jenis payload, obfuscation, dan memulai listener.
+Di mode CLI, Anda akan diminta untuk memilih jenis payload (reverse shell atau bind shell), obfuscation yang diinginkan, serta menentukan LHOST dan LPORT.
 
 Mode GUI
 
 python main.py
 # Pilih: 2 (GUI)
 
-GUI akan tampil dengan input interaktif untuk membuat dan melihat payload secara visual.
+GUI akan muncul dengan antarmuka pengguna yang mudah untuk memilih opsi payload dan obfuscation.
 
 
 ---
 
-Payload yang Didukung
+Jenis Payload yang Didukung
+
+
+---
 
 Teknik Obfuscation
 
-base64: Encode payload ke base64
+base64: Encode payload menjadi base64 agar sulit dibaca.
 
-xor: Encode karakter payload dengan XOR
+xor: Obfuscate payload dengan teknik XOR.
 
-reverse: Membalik urutan karakter payload
+reverse: Membalik urutan karakter payload.
 
-chain: Kombinasi ketiga metode di atas untuk obfuscation berlapis
+chain: Gabungkan beberapa teknik obfuscation untuk menyembunyikan payload lebih dalam.
 
 
 
@@ -80,28 +117,21 @@ echo aGVsbG8gd29ybGQ= | base64 -d | bash
 
 ---
 
-Kontribusi
-
-Pull request sangat diterima! Silakan fork, buat fitur baru atau perbaikan, lalu submit PR.
-
-
----
-
-Catatan Penting
-
-Tool ini dibuat untuk tujuan edukasi dan ethical hacking. Penggunaan untuk aktivitas ilegal bukan tanggung jawab pembuat.
-
-
----
-
 Lisensi
 
-MIT License
+Distribusikan di bawah lisensi MIT. Lihat file LICENSE untuk detail lengkapnya.
 
 
 ---
 
-Kontak
+Kontribusi
 
-Author: r00tH3x Telegram: @yourhandle Github: yourgithub
+Pull request sangat diterima! Untuk perubahan besar, harap buka issue terlebih dahulu untuk diskusi.
+
+
+---
+
+> r00tH3x — Tools built to educate, not to exploit.
+
+
 
