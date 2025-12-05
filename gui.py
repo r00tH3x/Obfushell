@@ -150,7 +150,7 @@ class ObfushellGUI(QWidget):
         if not lport.isdigit() or not 1 <= int(lport) <= 65535:
             self.log("Invalid LPORT")
             return
-        listener_tool = "threaded"  # Default ke threaded
+        listener_tool = "threaded" 
         self.log(f"Starting listener on port {lport}...")
         start_listener(listener_tool, int(lport))
 
