@@ -5,7 +5,7 @@ import random
 def check_open_port(host, port):
     """Check if port is open with latency."""
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.settimeout(0.5)  # Cepetin scanning
+    s.settimeout(0.5)  
     try:
         start_time = time.time()
         s.connect((host, int(port)))
