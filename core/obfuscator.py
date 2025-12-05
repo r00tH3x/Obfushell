@@ -6,9 +6,9 @@ def analyze_payload(payload):
     """Choose best obfuscation methods based on payload."""
     length = len(payload)
     if length < 50:
-        return ["xor", "hex"]  # Lightweight buat payload pendek
+        return ["xor", "hex"] 
     elif "python" in payload.lower():
-        return ["base64", "reverse", "xor"]  # Heavy buat Python
+        return ["base64", "reverse", "xor"]  
     return random.sample(["base64", "xor", "reverse", "hex"], k=2)
 
 def base64_encode(payload):
